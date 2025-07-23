@@ -90,7 +90,7 @@ jobs:
             docker rm logbert_file_receiver_agent-container || true
           
             echo "Running new container..."
-            docker run -d --name logbert_file_receiver_agent-container -p 8000:8000 ${{env.ECR_IMAGE}}
+            docker run -d --name logbert_file_receiver_agent-container -p 7860:7860 ${{env.ECR_IMAGE}}
 
             echo "Deployment complete. Active containers:"
             docker ps -a
