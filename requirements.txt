@@ -4,3 +4,4 @@ boto3
 redis
 dotenv
 python-multipart
+python-dotenv
