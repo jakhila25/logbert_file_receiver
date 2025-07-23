@@ -59,7 +59,7 @@ jobs:
 
       - name: Tag image for ECR
         run: |
-          ECR_REGISTRY=${{secrets.AWS_ACCOUNT_ID}}.dkr.ecr.eu-north-1.amazonaws.com/${{secrets.ECR_REPO_NAME}}
+          ECR_REGISTRY=${{secrets.AWS_ACCOUNT_ID}}.dkr.ecr.${{secrets.AWS_REGION }}.amazonaws.com/${{secrets.ECR_REPO_NAME}}
           docker tag ${{secrets.DOCKER_USERNAME }}/logbert_file_receiver_agent:latest $ECR_REGISTRY:latest
           echo "ECR_IMAGE=$ECR_REGISTRY:latest" >> $GITHUB_ENV
 
