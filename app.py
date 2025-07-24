@@ -23,10 +23,17 @@ app.add_middleware(
 )
     
 # S3 configuration (replace with your actual values or use environment variables)
-S3_BUCKET = os.getenv("S3_BUCKET", "your-s3-bucket-name")
-S3_REGION = os.getenv("S3_REGION", "us-east-1")
-S3_ACCESS_KEY = os.getenv("AWS_ACCESS_KEY_ID", "your-access-key")
-S3_SECRET_KEY = os.getenv("AWS_SECRET_ACCESS_KEY", "your-secret-key")
+#S3_BUCKET = os.getenv("S3_BUCKET", "your-s3-bucket-name")
+#S3_REGION = os.getenv("S3_REGION", "us-east-1")
+#S3_ACCESS_KEY = os.getenv("AWS_ACCESS_KEY_ID", "your-access-key")
+#S3_SECRET_KEY = os.getenv("AWS_SECRET_ACCESS_KEY", "your-secret-key")
+
+# S3 configuration
+S3_BUCKET="group13506"
+S3_REGION="eu-north-1"
+AWS_ACCESS_KEY_ID="AKIARVB2F2G73CRY5NS3"
+AWS_SECRET_ACCESS_KEY="hKN6yDq83kEsWCKB5miv1ygw/dFH9i2dISx6fR3Y"
+
 
 # Initialize S3 client
 s3_client = boto3.client(
@@ -38,11 +45,18 @@ s3_client = boto3.client(
 
 
 # Redis configuration (use os.getenv for safety and support username/password)
-REDIS_HOST = os.getenv("REDIS_HOST", "localhost")
-REDIS_PORT = int(os.getenv("REDIS_PORT", 6379))
-REDIS_QUEUE = os.getenv("REDIS_QUEUE", "logbert_uploads")
-REDIS_USERNAME = os.getenv("REDIS_USERNAME")
-REDIS_PASSWORD = os.getenv("REDIS_PASSWORD")
+#REDIS_HOST = os.getenv("REDIS_HOST", "localhost")
+#REDIS_PORT = int(os.getenv("REDIS_PORT", 6379))
+#REDIS_QUEUE = os.getenv("REDIS_QUEUE", "logbert_uploads")
+#REDIS_USERNAME = os.getenv("REDIS_USERNAME")
+#REDIS_PASSWORD = os.getenv("REDIS_PASSWORD")
+
+# Redis configuration
+REDIS_HOST="redis-19932.c263.us-east-1-2.ec2.redns.redis-cloud.com"
+REDIS_PORT="19932"
+REDIS_USERNAME="default"
+REDIS_PASSWORD="SrPY3JUt6TXi33BPdDRDiW9fIplx2BJe"
+REDIS_QUEUE="logbert_uploads"
 
 redis_kwargs = dict(
     host=REDIS_HOST,
