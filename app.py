@@ -8,10 +8,20 @@ load_dotenv()
 import boto3
 from botocore.exceptions import BotoCoreError, ClientError
 import redis
-
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="File Receiver Service")
 
+# Add CORS middleware — allow all origins
+# ✅ Add CORS middleware — allow all origins
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],            # Allow all origins (wildcard)
+    allow_credentials=True,
+    allow_methods=["*"],            # Allow all HTTP methods
+    allow_headers=["*"],            # Allow all headers
+)
+    
 # S3 configuration (replace with your actual values or use environment variables)
 S3_BUCKET = os.getenv("S3_BUCKET", "your-s3-bucket-name")
 S3_REGION = os.getenv("S3_REGION", "us-east-1")
