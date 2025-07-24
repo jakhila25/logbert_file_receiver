@@ -39,8 +39,8 @@ AWS_SECRET_ACCESS_KEY="hKN6yDq83kEsWCKB5miv1ygw/dFH9i2dISx6fR3Y"
 s3_client = boto3.client(
     "s3",
     region_name=S3_REGION,
-    aws_access_key_id=S3_ACCESS_KEY,
-    aws_secret_access_key=S3_SECRET_KEY
+    aws_access_key_id=AWS_ACCESS_KEY_ID,
+    aws_secret_access_key=AWS_SECRET_ACCESS_KEY
 )
 
 
